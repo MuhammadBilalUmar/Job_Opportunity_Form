@@ -36,10 +36,10 @@
             </div>
             <div class="form-row">
                 <div class="form-group col">
-                    <label>Attachement</label>
+                    <label>Attachment</label>
                     <input type="file" formControlName="Attachement" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Attachement.errors }" />
                     <div *ngIf="submitted && f.Attachement.errors" class="invalid-feedback">
-                        <div *ngIf="f.Attachement.errors.required">Attachement is required</div>
+                        <div *ngIf="f.Attachement.errors.required">Attachment is required</div>
                     </div>
                 </div>
             </div>
