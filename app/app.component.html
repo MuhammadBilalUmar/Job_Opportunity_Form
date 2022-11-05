@@ -1,0 +1,54 @@
+<!-- main app container -->
+<div class="card m-3">
+    <h5 class="card-header text-center">Job Opportunity</h5>
+    <div class="card-body">
+        <form [formGroup]="JobOppForm" (ngSubmit)="onSubmit()">
+            <div class="form-row">
+            </div>
+            <div class="form-group">
+                <label>Title</label>
+                <input type="text" formControlName="Title" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Title.errors }" />
+                <div *ngIf="submitted && f.Title.errors" class="invalid-feedback">
+                    <div *ngIf="f.Title.errors.required">Title is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Description</label>
+                <input type="text" formControlName="Description" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Description.errors }" />
+                <div *ngIf="submitted && f.Description.errors" class="invalid-feedback">
+                    <div *ngIf="f.Description.errors.required">Description is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Rate</label>
+                <select formControlName="Rate" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Rate.errors }">
+                    <option value="Hourly">Hourly</option>
+                    <option value="Annually">Annually</option>
+                </select>
+                <div *ngIf="submitted && f.Rate.errors" class="invalid-feedback">
+                    <div *ngIf="f.Rate.errors.required">Rate is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Client</label>
+                <input type="text" formControlName="Client" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Client.errors }" />
+                <div *ngIf="submitted && f.Client.errors" class="invalid-feedback">
+                    <div *ngIf="f.Client.errors.required">Client is required</div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col">
+                    <label>Attachement</label>
+                    <input type="file" formControlName="Attachement" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Attachement.errors }" />
+                    <div *ngIf="submitted && f.Attachement.errors" class="invalid-feedback">
+                        <div *ngIf="f.Attachement.errors.required">Attachement is required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <button class="btn btn-secondary" type="reset" (click)="onReset()">Cancel</button>
+                <button class="btn btn-primary ml-1">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
