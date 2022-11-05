@@ -3,8 +3,6 @@
     <h5 class="card-header text-center">Job Opportunity</h5>
     <div class="card-body">
         <form [formGroup]="JobOppForm" (ngSubmit)="onSubmit()">
-            <div class="form-row">
-            </div>
             <div class="form-group">
                 <label>Title</label>
                 <input type="text" formControlName="Title" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Title.errors }" />
